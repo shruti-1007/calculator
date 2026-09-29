@@ -1,0 +1,150 @@
+*{
+    margin: auto;
+}
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: rgb(235, 226, 241);
+    position: relative;
+}
+.floaties {
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    position: fixed;
+    z-index: 0;
+}
+.floaty {
+    animation: float-around 8s ease-in-out infinite;
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 30px;
+    opacity: 0.7;
+    position: absolute;
+    text-shadow: 2px 3px 0 rgba(255, 255, 255, 0.55);
+}
+.floaty-heart { color: #e887aa; }
+.floaty-flower { color: #e9a84c; }
+.floaty-star { color: #8d83cf; }
+.floaty-sparkle { color: #e0a7ca; }
+.floaty-cloud { color: #89adcb; }
+.floaty-butterfly { color: #d58bb9; }
+.heart-one { left: 9%; top: 20%; animation-delay: -1s; }
+.heart-two { right: 10%; top: 72%; animation-delay: -5s; }
+.heart-three { left: 19%; top: 82%; animation-delay: -3s; }
+.flower-one { right: 15%; top: 19%; animation-delay: -6s; }
+.flower-two { left: 4%; top: 64%; animation-delay: -2s; }
+.flower-three { right: 5%; top: 43%; animation-delay: -7s; }
+.star-one { left: 22%; top: 8%; animation-delay: -4s; }
+.star-two { right: 25%; top: 88%; animation-delay: -1.5s; }
+.sparkle-one { right: 4%; top: 8%; animation-delay: -5.5s; }
+.cloud-one { left: 8%; top: 42%; animation-delay: -2.5s; }
+.sparkle-two { left: 34%; top: 16%; animation-delay: -4.5s; animation-duration: 6s; }
+.heart-four { right: 31%; top: 11%; animation-delay: -6.5s; animation-duration: 10s; }
+.flower-four { left: 30%; top: 91%; animation-delay: -1.5s; animation-duration: 7s; }
+.star-three { right: 7%; top: 57%; animation-delay: -3.5s; animation-duration: 9s; }
+.cloud-two { left: 26%; top: 74%; animation-delay: -7s; animation-duration: 11s; }
+.butterfly-one { right: 18%; top: 34%; animation-delay: -5s; animation-duration: 7.5s; }
+.sparkle-three { left: 6%; top: 12%; animation-delay: -2s; animation-duration: 5.5s; }
+@keyframes float-around {
+    0%, 100% { transform: translate(0, 0) rotate(-8deg); }
+    50% { transform: translate(14px, -22px) rotate(10deg); }
+}
+@keyframes float-drift {
+    0%, 100% { transform: translate(0, 0) rotate(8deg) scale(1); }
+    33% { transform: translate(-12px, -18px) rotate(-12deg) scale(1.12); }
+    66% { transform: translate(18px, 8px) rotate(5deg) scale(0.92); }
+}
+.sparkle-two,
+.heart-four,
+.flower-four,
+.star-three,
+.cloud-two,
+.butterfly-one,
+.sparkle-three {
+    animation-name: float-drift;
+}
+.body,
+h1 {
+    position: relative;
+    z-index: 1;
+}
+.body {
+    height: 530px;
+    width: 620px;
+    background-color: rgb(138, 112, 164);
+    padding: 10px;
+    padding-top: 20px;
+    border-radius: 20px;
+    
+}
+body{
+    background-color: rgb(235, 226, 241);
+}
+.main{
+    height: 320px;
+    width: 550px;
+    background-color: rgb(127, 145, 201);
+    padding: 20px;
+    border-radius: 10px;
+}
+.row {
+    display: flex;       
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.row span {
+    flex: 1;              /* each button takes equal space */
+}
+
+.row button {
+    width: 100%;          /* fill the span completely */
+    height: 50px;
+    font-size: 18px;
+}
+.screen{
+    height: 150px;
+    width: 590px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    background-color: thistle;
+    border-radius: 10px;
+    font-weight: bolder;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;       /* parent container must be relative */
+    padding: 5px;
+    box-sizing: border-box;
+  
+}
+h1{
+    text-align:center;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    font-family:Arial, Helvetica, sans-serif;
+    color:rgb(64, 28, 56);
+}
+.now {
+  position: absolute;       /* now we can position inside screen */
+  bottom: 5px;              /* distance from bottom */
+  right: 5px;               /* distance from right */
+  font-size: 24px;
+  font-size: xx-large;
+}
+button{
+    border-radius: 20px;
+}
+@media (max-width: 700px) {
+    .body {
+        box-sizing: border-box;
+        height: auto;
+        width: min(620px, 94vw);
+    }
+    .main,
+    .screen {
+        box-sizing: border-box;
+        width: 100%;
+    }
+    .floaty { font-size: 24px; }
+}
